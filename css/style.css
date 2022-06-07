@@ -186,8 +186,9 @@ body {
 .card-times{
   width: 22%;
   height: 35%;
+  background-color: #FFF;
   margin-left:1.5%;
-  background-image: url(/Projeto-Individual---Rugby/images/guardioes.jpg);
+  background-image: url(guardioes.jpg);
   border-radius: 5%;
   background-size: cover;
   float: left;
@@ -199,7 +200,7 @@ body {
   margin-left:2.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/spac.png);
+  background-image: url(spac.png);
   background-size: cover;
   float: left;
 }
@@ -209,7 +210,7 @@ body {
   margin-left:2.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/pasteur.jpg);
+  background-image: url(pasteur.jpg);
   background-size: cover;
   float: left;
 }
@@ -219,7 +220,7 @@ body {
   margin-left:3.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/melina.png);
+  background-image: url(melina.png);
   background-size: cover;
   float: left;
 }
@@ -229,7 +230,7 @@ body {
   margin-left:1.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/farrapos.jpg);
+  background-image: url(farrapos.jpg);
   background-size: cover;
   float: left;
   margin-top: 30px;
@@ -240,7 +241,7 @@ body {
   margin-left:2.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/rio\ branco.jpg);
+  background-image: url(rio\ branco.jpg);
   background-size: cover;
   float: left;
   margin-top: 30px;
@@ -251,7 +252,7 @@ body {
   margin-left:2.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/jacarei.png);
+  background-image: url(jacarei.png);
   background-size: cover;
   float: left;
   margin-top: 30px;
@@ -262,7 +263,7 @@ body {
   margin-left:3.5%;
   background-color: #FFF;
   border-radius: 5%;
-  background-image: url(/Projeto-Individual---Rugby/images/RPT.jpg);
+  background-image: url(RPT.jpg);
   background-size: cover;
   float: left;
   margin-top: 30px;
