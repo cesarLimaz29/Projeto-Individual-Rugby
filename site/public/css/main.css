@@ -103,6 +103,7 @@ body{
   height: 50px;
   padding: 5px;
   border: 0;
+  border: 0;
   font-family: Poppins-Regular;
   font-size: 22px;
   background-color: transparent;
@@ -176,6 +177,54 @@ body{
   box-shadow: none;
   transform: translateY(0);
 }
+:root {
+  --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+}
 
+select {
+  /* Reset Select */
+  margin-left: 30px;
+  appearance: none;
+  outline: 0;
+  border: 1px solid #000000;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color:  #818181;
+  background-color: #ffffff;
+  background-image: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: rgb(185, 179, 179);
+  transition: .25s all ease;
+  pointer-events: none;
+  border:1px solid;
+}
+/* Transition */
+.select:hover::after {
+  color: #000000;
+}
 
 

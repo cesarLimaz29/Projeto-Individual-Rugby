@@ -1,4 +1,5 @@
 create database rugbier;
+
 use rugbier;
 
 create table Usuario(

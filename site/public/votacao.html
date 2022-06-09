@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/votacao.css">
+    <link rel="stylesheet" href="css/votacao.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Rugbiers - index</title>
+</head>
+
+<!-- nav-bar -->
+
+<header id="inicio">
+    <ul>
+        <li><a href="index.html#">Voltar para Home</a></li>
+        <li><a href="#time">Times</a></li>
+        <li><a href="#votacao">Votação</a></li>
+        <li><a href="#btbtbt">Locais para assistir jogos</a></li>
+        <lis class="sep"> | </lis>
+        <li><a href="login.html">Sair</a></li>
+    </ul>
+</header>
+
+<body>
+
+    <!-- logo -->
+
+    <div class="logo">
+        <img src="images/logo sem fundo.png">
+    </div>
+
+
+   <!-- Principal -->
+   <main id="p1" class="conteudo" >
+    <section class="conteudo-principal" id="time">
+        <div><br>
+            <h1 class="titulo">Times de Rugby favoritos </h1>
+        </div>
+        <div class="container-cards">
+            <div class="conteudo-principal-caixa">
+            <div class="caixa transicao">
+                <label>
+                    <img class="conteudo-principal-imagem transicao" src="css/guardioes.jpg">
+                    <h2 class="conteudo-principal-titulo transicao">Guardiões - Time fundado pela Hurra onde
+                        reune jovens da zona leste e sul de São Paulo e os mostra a cultura do rugby </h2>
+                    <input type="radio" id="Guardioes" name="linguagens" value="15">
+                </label>
+            </div>
+            <div class="caixa transicao">
+                <label>
+                <img class="conteudo-principal-imagem transicao" src="css/spac.png">
+                <h2 class="conteudo-principal-titulo transicao">SPAC - Time fundado por ingleses quando o rugby surgiu no brasil, localizado na zona sul de São Paulo. </h2>
+                <input type="radio" id="Spac" name="linguagens" value="12">
+            </label>
+            </div>
+            <div class="caixa transicao">
+                <label>
+                    <img class="conteudo-principal-imagem transicao" src="css/pasteur.jpg">
+                    <h2 class="conteudo-principal-titulo transicao">Pasteur - Fundado por franceses, Atual campeão Brasileiro time famoso por revelar atletas para seleção. </h2>
+                <input type="radio" id="Pasteur" name="linguagens" value="9">
+            </label>
+            </div>
+
+            <div class="caixa transicao">
+                <label>
+                    <img class="conteudo-principal-imagem transicao" src="css/melina.png">
+                    <h2 class="conteudo-principal-titulo transicao">Melina - Primeiro time de rugby de Cuibá també formado por franceses, o melina é atual campeão Brasileiro Feminino.</h2>
+                <input type="radio" id="Melina" name="linguagens" value="10">
+            </label>
+            </div>
+            
+        </div>
+        </div>
+    </section>
+
+    <section class="conteudo-principal2">
+        <div class="conteudo-principal-caixa">
+            <div class="caixa transicao">
+                <label>
+                    <img class="conteudo-principal-imagem transicao" src="css/farrapos.jpg">
+                    <h2 class="conteudo-principal-titulo transicao">Farrapos - Grande time do Sul fundado por Portuguêses na Liga de rugby do sul ele é um dos times mais famosos.</h2>
+                <input type="radio" id="Farrapos" name="linguagens" value="7">
+            </label>
+            </div>
+            <div class="caixa transicao">
+                <label>
+                    <img class="conteudo-principal-imagem transicao" src="css/rio branco.jpg">
+                    <h2 class="conteudo-principal-titulo transicao">Rio Branco Rugby Clube - Os pelicanos estão no Brasil desde 1976 localizados na zona oeste de SP é Um time muito respeitado na liga. </h2>
+                <input type="radio" id="RioBranco" name="linguagens" value="10">
+            </label>
+            </div>
+            <div class="caixa transicao">
+                <label>
+                    <img class="conteudo-principal-imagem transicao" src="css/jacarei.png">
+                    <h2 class="conteudo-principal-titulo transicao">Jacarei Rugby - Time famoso por revelar grandes atletas para seleção brasileira, ensinando a base deles com a escola caipira, uma das melhores escolas de rugby do Brasil. </h2>
+                <input type="radio" id="Jacarei" name="linguagens" value="6">
+            </label>
+            </div>
+            <div class="caixa transicao">
+              <label>
+                <img class="conteudo-principal-imagem transicao" src="css/RPT.jpg">
+                <h2 class="conteudo-principal-titulo transicao">Leões - Os leões de Paraisópolis ou RPT é um time de grande nome, pois eles ensinam para galera de paraisopolis que o rugby pode ser a chave para um grande futuro.  </h2>
+                <input type="radio" id="RPT" name="linguagens" value="8">
+            </label>
+            </div>
+            
+        </div>
+        
+    </section>
+    <button class="button-28"  onclick="confirmarVoto()">Confirmar Voto</button>
+
+    <section class="conteudo-principal3" id="votacao">
+
+        <canvas id="myChart" class="grafico" style="background-color:white;"></canvas><center>
+        <button class="button-29" onclick="criar()">Atualizar Votação</button>
+    </center>
+    
+    </section>
+
+
+</main>
+<button class="button-30" id="btbtbt" style="display:block;" onclick="funcionar()">Visualizar Locais</button>
+
+<div class="locais">
+    <div class="historia" id="historia" style="display:none ;">
+        
+        <div class="container-historia" >
+            <div class=" texto-historia">
+                <h1> Locais para assistir os jogos</h1>
+                <p class="txt-1"> 
+                    Aqui em são paulo temos varios locais para assitir jogos de rugby então para você que não conhecia o esporte e esta afim de ver pessoalmente como funciona um jogo de rugby fique sempre de olho pois os jogos sempre acontecem nos fins de semana e os principais locais que estão recebendo as rodadas dos campeonatos são:
+                </p>
+                <p>CERET:  R. Canuto Abreu, s/n - Jardim Analia Franco, São Paulo - SP, 03336-060 </p>
+                
+                <p>SPAC RUGBY: Av. Atlântica, 1448 - Socorro, São Paulo - SP, 04768-100 </p>
+                
+
+            </div>
+            <div id="curiosidade"></div>
+            <div class="foto-historia"></div>
+        </div>
+    </div>
+
+</div>
+<footer class="container-footer">
+
+    <div class="footer-esquerda">
+
+        <h3>RUGBIERS</h3>
+
+        <p class="footer-links">
+            <a href="index.html">Inicio</a>
+
+            <a href="index.html#historia">Historia</a>
+
+            <a href="index.html#curiosidade">Curiosidades</a>
+
+            <a href="index.html#tms">Times favoritos</a>
+
+            <a href="login.html">Login</a>
+
+            <a href="cadastro.html">Cadastre-se</a>
+        </p>
+
+        <p class="footer-nome-empresa">Todos os direitos reservados para Cesar Lima © 2022</p>
+    </div>
+
+    <div class="footer-centro">
+        <span class="info">Informações</span>
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Rua Haddock Lobo, 595</span>  São Paulo</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>11 94857-6685</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:cesar.lima@sptech.school">cesar.lima@sptech.school</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-direita">
+
+        <p class="footer-sobre-empresa">
+            <span>Sobre o site   </span>
+            Jogo rugby desde os meus 8 anos de idade então decicidi fazer este projeto como meu projeto individual, pois amo este esporte e acho que nada na minha vida iria me representar tão bem, aqui esta um pouco de tudo, da Hístoria, das curiosidades e dos meus times favoritos!!
+        </p>
+
+    </div>
+
+</footer>
+</body>
+
+</html>
+
+<script>
+    
+     //Cumprindo Requisito de uso de VAR
+       
+var myChart = undefined
+var GuardioesVar = Number(Guardioes.value)
+var SpacVar = Number(Spac.value)
+var PasteurVar = Number(Pasteur.value)
+var MelinaVar = Number(Melina.value)
+var FarraposVar = Number(Farrapos.value)
+var RioBrancoVar = Number(RioBranco.value)  
+var JacareiVar = Number(Jacarei.value)
+var RPTVar = Number(RPT.value)
+
+
+var votos = [Guardioes]
+
+const labels = [
+    'Guardiões',
+    'Spac',
+    'Pasteur',
+    'Melina',
+    'Farrapos',
+    'Rio Branco',
+    'Jacarei',
+    'RPT',
+
+];
+
+// Cumprindo requisito do uso de Vetor
+
+var votos = [GuardioesVar, SpacVar, PasteurVar, MelinaVar, FarraposVar, RioBrancoVar, JacareiVar, RPTVar,]
+
+// Cumprindo o requisito de uso de função
+
+function confirmarVoto(){
+
+    // Cumprindo requisito de calculo matemático e condicionais
+    if(Guardioes.checked){
+       votos[0] += 1
+    }
+    if(Spac.checked){
+       votos[1] += 1
+    }
+    if(Pasteur.checked){
+       votos[2] += 1
+    }
+    if(Melina.checked){
+       votos[3] += 1
+    }
+   
+    if(Farrapos.checked){
+       votos[4] += 1
+    }
+    if(RioBranco.checked){
+       votos[5] += 1
+    }    
+    if(Jacarei.checked){
+       votos[6] += 1
+    }
+    if(RPT.checked){
+       votos[7] += 1
+    }
+
+    
+}
+
+function criar() {
+
+    console.log(votos)
+
+    if (myChart != undefined) {
+        myChart.destroy();
+    }
+
+    var data = {
+        labels: labels,
+        datasets: [{
+            label: 'Time de Rugby Favorito',
+            backgroundColor: 'RED',
+            borderColor: 'RED',
+            data: votos,
+        }]
+    };
+
+    var config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+    myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+}
+
+criar()
+
+
+    function funcionar() {
+        
+       
+
+        for (let index = 0; index < 1; index++) {
+            historia.style.display="block"
+            btbtbt.style.display="none"
+            
+        }
+
+
+
+
+    }
+
+</script>
+</html>

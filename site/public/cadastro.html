@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Rugbier - Cadastro </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <script src="./js/funcoes.js"></script>
+</head>
+<header>
+    <ul>
+        <li><a href="index.html#">Inicio</a></li>
+        <li><a href="index.html#historia">Historia</a></li>
+        <li><a href="index.html#curiosidade">Curiosidades</a></li>
+        <li><a href="index.html#tms">Times favoritos</a></li>
+        <lis class="sep"> | </lis>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cadastro.html">Cadastre - se</a></li>
+    </ul>
+</header>
+<div class="logo">
+    <img src="images/logo sem fundo.png">
+</div>
+<br><br><br>
+
+<body>
+    <div class="containerzao">
+        <div class="container"></div>
+
+        <div class="container-inputs">
+
+            <h1> Cadastre - Se</h1>
+
+            <p> Selecione o seu time favorito:</p>
+            <div class="select">
+                <select id="time_input">
+                    <option value="">--Escolha um time--</option>
+                    <option value="1">Guardiões</option>
+                    <option value="2">Spac</option>
+                    <option value="3">Pasteur</option>
+                    <option value="4">Melina</option>
+                    <option value="5">Farrapos</option>
+                    <option value="6">Rio Branco </option>
+                    <option value="7">Jacarei Rugby </option>
+                    <option value="8">RPT Leões de Paraisopolis</option>
+                </select>
+            </div>
+
+            <p> Insira os dados abaixo:</p>
+            <div class="single-input">
+
+                <input class="inputs" id="nome_input" placeholder="Nome completo" required>
+            </div>
+            <div class="single-input">
+                <input class="inputs" id="email_input" type="email" placeholder="Email" required>
+            </div>
+
+            <div class="single-input">
+
+                <input class="inputs" id="senha_input" type="password" placeholder="Senha" required>
+            </div>
+            <div class="single-input">
+
+                <input class="inputs" id="confirmacao_senha_input" type="password" placeholder="Confirmar Senha"
+                    required>
+            </div>
+            <span class="msg-baixo"> Já possui conta ? <a href="login.html">Faça login</a></span>
+            <button class="button-28" role="button" onclick="cadastrar()">Cadastrar</button>
+        </div>
+
+        <div id="cardErro" style="display: none;">
+            <div id="mensagem_erro"></div>
+            <div id="div_aguardar"></div>
+        </div>
+
+    </div>
+</body>
+<script>
+    function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var timeVar = time_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || timeVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                timeServer: timeVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
